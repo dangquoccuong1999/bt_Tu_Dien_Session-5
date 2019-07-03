@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="color: red; margin-left: 700px">Đây là từ điển kinh điển Anh - Việt</h1>
+<div style="margin-left: 700px">
+    <input id="input" placeholder="Mời bạn nhập từ tiếng anh">
+    <button onclick="convert()">Tìm kiếm</button>
+    <div id="outPut"></div>
+</div>
+
+<script>
+    let arr_english = ['hello', 'sorry', 'love'];
+    let arr_vietNam = ['xin chào', 'xin lỗi', 'yêu'];
+
+    function convert() {
+        let input = document.getElementById('input').value;
+        for (let i = 0; i < arr_english.length; i++) {
+            if (arr_english[i] == input) {
+                document.getElementById('outPut').innerHTML = arr_vietNam[i];
+            }
+            if (arr_english.indexOf(input) == -1){
+                alert('Không dịch được');
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>
